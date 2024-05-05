@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import {BaseColaboradores} from './BaseColaboradores'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Alert from './Alert';
+import Alert from './Alert.jsx';
 
-function Formulario() {
+function Formulario({agregarColaborador}) {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [edad, setEdad] = useState("");
@@ -16,13 +15,33 @@ function Formulario() {
   const enviarFormulario = (e) => {
     e.preventDefault();
 
-    if (nombre === "" || email === "" || edad === "" || cargo === ""|| telefono === "") {
+    if (
+      nombre === "" ||
+      email === "" ||
+      edad === "" ||
+      cargo === "" ||
+      telefono === ""
+    ) {
       setError(true);
       setMensaje("Todos los campos son obligatorios");
       return;
     }
     setError(false);
     setMensaje("Registro exitoso");
+    const nuevoColaborador = {
+      id: Date.now().toString(),
+      nombre,
+      email,
+      edad,
+      cargo,
+      telefono,
+    };
+    agregarColaborador(nuevoColaborador);
+    setNombre("");
+    setEmail("");
+    setEdad("");
+    setCargo("");
+    setTelefono("");
   };
 
   return (

@@ -1,13 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import {BaseColaboradores} from './BaseColaboradores'
-import { useState } from 'react';
 
-function Buscador() {
-  const [nombreTarea, setNombreTarea] = useState("");
-  const capturaInput = (e) => {
-    setNombreTarea(e.target.value);
-  };
+function Buscador({ filtro, onFiltroChange }) {
   return (
     <>
       <InputGroup className="mb-3">
@@ -15,7 +9,8 @@ function Buscador() {
           placeholder="Busca un colaborador"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
-          onChange={capturaInput}
+          value={filtro}
+          onChange={e => onFiltroChange(e.target.value)}
         />
       </InputGroup>
     </>
