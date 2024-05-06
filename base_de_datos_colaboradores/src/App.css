@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 50vh;
   grid-template-rows: auto;
   grid-template-areas: 'buscador''agregar';
-  gap: 2rem;
+  gap: 1rem;
 }
 .container_buscador_listado{
   grid-column: 1;
