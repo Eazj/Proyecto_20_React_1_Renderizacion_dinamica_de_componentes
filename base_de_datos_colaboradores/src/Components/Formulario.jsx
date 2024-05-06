@@ -45,7 +45,7 @@ function Formulario({agregarColaborador}) {
   };
 
   return (
-    <Form onSubmit={enviarFormulario}>
+    <Form onSubmit={enviarFormulario} className='formulario'>
         <Form.Group className="mb-3" controlId="nombre_colaborador">
         <Form.Control type="text" placeholder="Nombre del colaborador" onChange={(e) => setNombre(e.target.value)}value={nombre} />
       </Form.Group>

@@ -31,9 +31,15 @@ function App() {
 
   return (
     <>
+    <div className='container_buscador_listado'>
+    <h1>Lista Colaboradores</h1>
       <Buscador filtro={filtro} onFiltroChange={filtroChange} />
       <Listado colaboradores={colaboradoresFiltrados} onEliminarColaborador={eliminarColaborador} />
+    </div>
+      <div className='container_formulario'>
+        <h2>Agregar Colaborador</h2>
       <Formulario agregarColaborador={agregarColaborador} />
+      </div>
     </>
   );
 }

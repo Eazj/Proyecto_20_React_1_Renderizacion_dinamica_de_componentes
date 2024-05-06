@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 function Listado({ colaboradores, onEliminarColaborador }) {
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover className="tabla">
       <thead>
         <tr>
           <th>Nombre</th>
